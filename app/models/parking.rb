@@ -57,7 +57,7 @@ class Parking < ApplicationRecord
       if duration <= 360
         self.amount = 1200
       else
-        self.amount = 1600
+        self.amount = (duration.to_f / 1440).ceil * 1600
       end
     end
 
